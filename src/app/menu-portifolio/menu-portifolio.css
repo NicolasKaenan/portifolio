@@ -1,0 +1,57 @@
+.menu-portifolio{
+  background-color: rgba(255, 255, 255, 0.125);
+  padding: 20px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.menu-portifolio li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu-portifolio a{
+  color: greenyellow;
+  text-decoration: none;
+  transition: 0.3s;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.menu-portifolio a:hover{
+  text-decoration: underline;
+  font-size: 120%;
+}
+
+.menu-portifolio li:last-child {
+  margin-right: 0;
+}
+
+.menu-portifolio{
+  text-align: center;
+  font-size: 30px;
+}
+
+.menu-portifolio {
+  opacity: 0;
+  transform: translateY(-70px);
+  animation: fadeInDown 0.3s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

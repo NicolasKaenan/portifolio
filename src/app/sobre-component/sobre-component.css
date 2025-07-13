@@ -1,0 +1,101 @@
+.sobre-container {
+  background-color: rgba(255, 255, 255, 0.125);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 20px auto;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+}
+
+.sobre-container img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.sobre-container .sobre-text {
+  flex: 1;
+}
+
+.sobre-container h1 {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.sobre-container h1, .sobre-container h2, .sobre-container p {
+  color: white;
+}
+
+.sobre-container h2 {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sobre-container p {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.sobre-header {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.sobre-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sobre-redes-sociais {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 20px;
+  padding: 10px;
+}
+
+.sobre-redes-sociais a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.sobre-redes-sociais ion-icon:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.sobre-redes-sociais a {
+  animation: fade 0.75s ease-in-out 0s 1 normal forwards;
+}
+
+.sobre-redes-sociais ion-icon {
+  font-size: 44px;
+  color: greenyellow;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
