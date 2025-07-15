@@ -38,6 +38,12 @@
   animation: fadeInDown 0.3s ease-out forwards;
 }
 
+.menu-portifolio .active {
+  color: white;
+  text-decoration: underline;
+  font-size: 120%;
+}
+
 @keyframes fadeInDown {
   to {
     opacity: 1;
@@ -55,3 +61,19 @@
     transform: translateX(0);
   }
 }
+
+
+@media (max-width: 480px) {
+  .menu-portifolio {
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-portifolio li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
