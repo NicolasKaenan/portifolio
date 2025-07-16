@@ -1,6 +1,8 @@
-  <ul class="menu-portifolio">
-    <li><a href="/"><ion-icon name="home-outline"></ion-icon>Home</a></li>
-    <li><a href="/sobre"><ion-icon name="person-outline"></ion-icon>Sobre</a></li>
-    <li><a href="/projeto"><ion-icon name="briefcase-outline"></ion-icon>Projetos</a></li>
-    <li><a href="/certificados"><ion-icon name="document-text-outline"></ion-icon>Certificados</a></li>
+<nav>
+<ul class="menu-portifolio">
+    <li><a [routerLink]="'/home'" routerLinkActive="nav-active"><ion-icon name="home-outline"></ion-icon>Home</a></li>
+    <li><a [routerLink]="'/sobre'" routerLinkActive="nav-active"><ion-icon name="person-outline"></ion-icon>Sobre</a></li>
+    <li><a [routerLink]="'/projeto'" routerLinkActive="nav-active"><ion-icon name="briefcase-outline"></ion-icon>Projetos</a></li>
+    <li><a [routerLink]="'/certificados'" routerLinkActive="nav-active"><ion-icon name="document-text-outline"></ion-icon>Certificados</a></li>
   </ul>
+</nav>

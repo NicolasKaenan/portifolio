@@ -9,10 +9,16 @@
   margin-right: 20px;
 }
 
+.menu-portifolio a.nav-active { 
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+
 .menu-portifolio a{
   color: greenyellow;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.5s;
   font-family: "Space Mono", monospace;
   font-weight: 700;
   font-style: normal;
@@ -20,7 +26,7 @@
 
 .menu-portifolio a:hover{
   text-decoration: underline;
-  font-size: 120%;
+  font-size: 110%;
 }
 
 .menu-portifolio li:last-child {
@@ -36,12 +42,6 @@
   opacity: 0;
   transform: translateY(-70px);
   animation: fadeInDown 0.3s ease-out forwards;
-}
-
-.menu-portifolio .active {
-  color: white;
-  text-decoration: underline;
-  font-size: 120%;
 }
 
 @keyframes fadeInDown {
@@ -69,6 +69,9 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 0;
+    background-color: black;
   }
 
   .menu-portifolio li {
