@@ -1,11 +1,12 @@
-<nav>
+<nav class="menu-portifolio-nav">
+  <a class="menu-logo" [routerLink]="'/home'">
+    <img src="logo.png" alt="Logo Kaenan" />Kaenan.dev
+  </a>
   <ul class="menu-portifolio">
-    <li><a [routerLink]="'/home'">
-      <img src="logo.png" alt="Logo Kaenan" />Kaenan.dev
-    </a></li>
-    <li><a [routerLink]="'/home'" routerLinkActive="nav-active"><ion-icon name="home-outline"></ion-icon>Home</a></li>
-    <li><a [routerLink]="'/sobre'" routerLinkActive="nav-active"><ion-icon name="person-outline"></ion-icon>Sobre</a></li>
-    <li><a [routerLink]="'/projeto'" routerLinkActive="nav-active"><ion-icon name="briefcase-outline"></ion-icon>Projetos</a></li>
-    <li><a [routerLink]="'/certificados'" routerLinkActive="nav-active"><ion-icon name="document-text-outline"></ion-icon>Certificados</a></li>
+    <li><a class="menu-item" [routerLink]="'/home'" routerLinkActive="nav-active"><ion-icon name="home-outline"></ion-icon>Home</a></li>
+    <li><a class="menu-item" [routerLink]="'/sobre'" routerLinkActive="nav-active"><ion-icon name="person-outline"></ion-icon>Sobre</a></li>
+    <li><a class="menu-item" [routerLink]="'/projeto'" routerLinkActive="nav-active"><ion-icon name="briefcase-outline"></ion-icon>Projetos</a></li>
+    <li><a class="menu-item" [routerLink]="'/certificados'" routerLinkActive="nav-active"><ion-icon name="document-text-outline"></ion-icon>Certificados</a></li>
   </ul>
+  <a class="menu-toggle" (click)="toggleMenu()">&#9776;</a>
 </nav>

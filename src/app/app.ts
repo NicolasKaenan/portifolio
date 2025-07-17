@@ -5,10 +5,11 @@ import { HomeComponent } from './home-component/home-component';
 import { SobreComponent } from './sobre-component/sobre-component';
 import { ProjetoComponent } from './projeto-component/projeto-component';
 import { CertificadoComponent } from './certificado-component/certificado-component';
+import { FooterPortifolio } from "./footer-portifolio/footer-portifolio";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenuPortifolio, HomeComponent, SobreComponent, ProjetoComponent, CertificadoComponent],
+  imports: [RouterOutlet, MenuPortifolio, HomeComponent, SobreComponent, ProjetoComponent, CertificadoComponent, FooterPortifolio],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

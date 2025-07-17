@@ -13,6 +13,14 @@ import { filter } from 'rxjs/operators';
 })
 export class MenuPortifolio {
   constructor(private router: Router) {}
-
-  
+  toggleMenu() {
+    const menu = document.querySelector('.menu-portifolio');
+    const menu_nav = document.querySelector('.menu-portifolio-nav');
+    if (menu) {
+      menu.classList.toggle('open');
+      if (menu_nav) {
+        menu_nav.classList.toggle('open');
+      }
+    }
+  }
 }
