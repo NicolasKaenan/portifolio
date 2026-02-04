@@ -21,7 +21,12 @@ export const routes: Routes = [
     projetos: ProjetosResolver
   }
   }
-  ,{ path: 'projeto/:id', component: ProjetoIDComponent },
+  ,{
+    path: 'projeto/:id',
+    loadComponent: () =>
+      import('./projeto-component/projeto-component').then(m => m.ProjetoComponent),
+  }
+,
   { path: 'certificados', component: CertificadoComponent },
   {
     path: 'control',
