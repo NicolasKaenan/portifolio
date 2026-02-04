@@ -6,6 +6,7 @@
   background-color: rgba(255, 255, 255, 0.125);
   padding: 20px;
   border-radius: 0 0 10px 10px;
+  width: 100vw;
   font-size: 30px;
   font-family: "Space Mono", monospace;
   font-weight: 700;
@@ -170,3 +171,29 @@
   }
 }
 
+
+.menu-portifolio-nav {
+    display: flex; 
+    
+    align-items: center;
+    flex-direction: column; 
+    
+    justify-content: space-between; 
+    
+    min-height: 50px; 
+    
+    padding: 0 20px;
+}
+
+/* Opcional: Alinha os itens do menu horizontalmente */
+.menu-portifolio {
+    display: flex;
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Opcional: Adiciona espaço entre os itens do menu */
+.menu-portifolio li {
+    margin-left: 20px;
+}

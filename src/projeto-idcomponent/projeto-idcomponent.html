@@ -1,0 +1,21 @@
+@if (loading) {
+  <p>Carregando projeto...</p>
+}
+
+@if (error) {
+  <p>Projeto não encontrado.</p>
+}
+
+@if (project) {
+  <h1 style="color: white;">{{ project.title }}</h1>
+
+  <p  style="color: white;">{{ project.full_description }}</p>
+
+  <a [href]="project.project_url" target="_blank">
+    Abrir projeto
+  </a>
+
+  <a [href]="project.repository_url" target="_blank">
+    Repositório
+  </a>
+}

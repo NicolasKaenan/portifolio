@@ -9,6 +9,7 @@ import { FooterPortifolio } from "./footer-portifolio/footer-portifolio";
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, MenuPortifolio, HomeComponent, SobreComponent, ProjetoComponent, CertificadoComponent, FooterPortifolio],
   templateUrl: './app.html',
   styleUrl: './app.css'

@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router, NavigationEnd, RouterModule } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { NgxTypedWriterModule } from 'ngx-typed-writer';
 
 @Component({
   selector: 'menu-portifolio',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, NgxTypedWriterModule],
   templateUrl: './menu-portifolio.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   styleUrls: ['./menu-portifolio.css']

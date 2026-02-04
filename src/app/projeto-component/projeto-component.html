@@ -1,1 +1,20 @@
-<p>projeto-component works!</p>
+@if (loading) {
+  <section style="color: white;">Carregando projetos...</section>
+}
+
+@if (error) {
+  <section>Erro ao carregar projetos.</section>
+}
+
+@if (!loading && !error) {
+  @for (project of projects; track project.id) {
+    <article class="project-card">
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.shortened_description }}</p>
+
+      <a [routerLink]="['/projeto', project.id]">
+        Ver projeto
+      </a>
+    </article>
+  }
+}

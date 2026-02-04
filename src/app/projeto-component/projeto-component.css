@@ -1,0 +1,41 @@
+article {
+  background: rgba(70, 70, 70, 0.35);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+article h2 {
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+article p {
+  color: #d1d1d1;
+  line-height: 1.6;
+}
+
+article a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #7dd3fc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
