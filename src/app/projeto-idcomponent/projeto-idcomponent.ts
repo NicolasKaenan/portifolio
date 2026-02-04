@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { Project } from '../app/core/models/projects.model';
-import { ProjectsService } from '../app/core/services/projects.service';
-
+import { Project } from '../core/models/projects.model';
+import { ProjectsService } from '../core/services/projects.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-projeto-component',
@@ -22,7 +22,8 @@ export class ProjetoIDComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private projectsService: ProjectsService
+    private projectsService: ProjectsService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
@@ -34,17 +35,21 @@ export class ProjetoIDComponent implements OnInit, OnDestroy {
         this.loading = true;
         this.error = false;
 
-        this.projectsService.getById(id).subscribe({
-          next: (data) => {
-            this.project = data;
-            this.loading = false;
-          },
-          error: (err) => {
-            console.error(err);
-            this.error = true;
-            this.loading = false;
-          }
-        });
+        if (isPlatformBrowser(this.platformId)) {
+          this.projectsService.getById(id).subscribe({
+            next: (data) => {
+              this.project = data;
+              this.loading = false;
+            },
+            error: (err) => {
+              console.error(err);
+              this.error = true;
+              this.loading = false;
+            }
+          });
+        } else {
+          this.loading = false;
+        }
       });
   }
 

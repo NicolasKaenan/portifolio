@@ -20,8 +20,8 @@ export const routes: Routes = [
   {
     path: 'projeto/:id',
     loadComponent: () =>
-      import('./projeto-component/projeto-component')
-        .then(m => m.ProjetoComponent),
+      import('./projeto-idcomponent/projeto-idcomponent')
+        .then(m => m.ProjetoIDComponent),
   },
 
   {
