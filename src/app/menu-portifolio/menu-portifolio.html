@@ -1,14 +1,31 @@
 <nav class="menu-portifolio-nav">
   <a class="menu-logo" [routerLink]="'/home'">
-    <img src="logo.png" alt="Logo Kaenan" /><ngx-typed-writer [strings]="['Kaenan.dev', 'Programador Full-stack e Pentester.']" [typeSpeed]="55"
-      [backSpeed]="30" [showCursor]="true" [backDelay]="1400" [startDelay]="500">
-    </ngx-typed-writer>
+    <img src="logo.png" alt="Logo Kaenan" />
+    <span id="typed"></span>
   </a>
-  <ul class="menu-portifolio">
-    <li><a class="menu-item" [routerLink]="'/home'" routerLinkActive="nav-active"><ion-icon name="home-outline"></ion-icon>Home</a></li>
-    <li><a class="menu-item" [routerLink]="'/sobre'" routerLinkActive="nav-active"><ion-icon name="person-outline"></ion-icon>Sobre</a></li>
-    <li><a class="menu-item" [routerLink]="'/projetos'" routerLinkActive="nav-active"><ion-icon name="briefcase-outline"></ion-icon>Projetos</a></li>
-    <li><a class="menu-item" [routerLink]="'/certificados'" routerLinkActive="nav-active"><ion-icon name="document-text-outline"></ion-icon>Certificados</a></li>
+
+  <ul class="menu-portifolio" [class.open]="menuOpen()">
+    <li>
+      <a class="menu-item" routerLink="/home" (click)="toggleMenu()">
+        <ion-icon name="home-outline"></ion-icon>Home
+      </a>
+    </li>
+    <li>
+      <a class="menu-item" routerLink="/sobre" (click)="toggleMenu()">
+        <ion-icon name="person-outline"></ion-icon>Sobre
+      </a>
+    </li>
+    <li>
+      <a class="menu-item" routerLink="/projetos" (click)="toggleMenu()">
+        <ion-icon name="briefcase-outline"></ion-icon>Projetos
+      </a>
+    </li>
+    <li>
+      <a class="menu-item" routerLink="/certificados" (click)="toggleMenu()">
+        <ion-icon name="document-text-outline"></ion-icon>Certificados
+      </a>
+    </li>
   </ul>
+
   <a class="menu-toggle" (click)="toggleMenu()">&#9776;</a>
 </nav>

@@ -29,6 +29,10 @@
   text-decoration: underline;
 }
 
+.menu-portifolio.open {
+  display: block;
+}
+
 .menu-portifolio a {
   color: greenyellow;
   text-decoration: none;

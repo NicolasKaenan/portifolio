@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MenuPortifolioComponent } from './menu-portifolio';
 
-import { MenuPortifolio } from './menu-portifolio';
 
 describe('MenuPortifolio', () => {
-  let component: MenuPortifolio;
-  let fixture: ComponentFixture<MenuPortifolio>;
+  let component: MenuPortifolioComponent;
+  let fixture: ComponentFixture<MenuPortifolioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MenuPortifolio]
+      imports: [MenuPortifolioComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MenuPortifolio);
+    fixture = TestBed.createComponent(MenuPortifolioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
