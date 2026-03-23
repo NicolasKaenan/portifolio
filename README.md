@@ -1,64 +1,54 @@
-<<<<<<< HEAD
-# FrontendKaenan
+# 🚀 Portfólio - Kaenan
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+![Angular](https://img.shields.io/badge/Angular-20-red?logo=angular)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
+![Spring Boot](https://img.shields.io/badge/API-SpringBoot-green?logo=springboot)
+![SSR](https://img.shields.io/badge/SSR-Enabled-purple)
 
-## Development server
+Este é o front-end do meu portfólio pessoal, desenvolvido com Angular, com foco em performance, arquitetura moderna e integração com uma API própria.
 
-To start a local development server, run:
+---
+
+## 🌐 Acesse o projeto
+
+🔗 https://kaenan.dev
+
+---
+
+## 🧠 Tecnologias utilizadas
+
+<p>
+  <img src="https://skillicons.dev/icons?i=angular,ts,js,html,css,vercel" />
+</p>
+
+---
+
+## ⚙️ Funcionalidades
+
+- 📄 Página inicial com apresentação  
+- 👨‍💻 Sobre mim  
+- 📁 Listagem de projetos dinâmica  
+- 🔎 Página de detalhes por projeto (`/projeto/:id`)  
+- 📜 Certificados  
+- 🔐 Área administrativa (CMS)  
+- 🌐 Integração com API externa  
+- ⚡ SSR para melhor SEO e performance  
+
+---
+
+## 🏗️ Arquitetura
+
+- Standalone Components  
+- Lazy Loading  
+- SSR (Server-Side Rendering)  
+- Separação entre client e server routes  
+- Consumo de API via services  
+
+---
+
+## 🚧 Rodando localmente
 
 ```bash
+npm install
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# portifolio
-Meu portifólio.
->>>>>>> b62a731 (Initial commit)
