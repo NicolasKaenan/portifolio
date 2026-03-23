@@ -1,21 +1,19 @@
-@if (loading) {
-  <p>Carregando projeto...</p>
-}
-
-@if (error) {
-  <p>Projeto não encontrado.</p>
-}
-
 @if (project) {
-  <h1 style="color: white;">{{ project.title }}</h1>
+  <div class="content">
+    <h1 class="project-title">{{ project.title }}</h1>
 
-  <p  style="color: white;">{{ project.full_description }}</p>
+    <div class="markdown-body">
+      <markdown [data]="project.full_description"></markdown>
+    </div>
 
-  <a [href]="project.project_url" target="_blank">
-    Abrir projeto
-  </a>
+    <div class="actions">
+      <a [href]="project.project_url" target="_blank" class="btn-action btn-primary">
+        <span>Abrir Projeto</span>
+      </a>
 
-  <a [href]="project.repository_url" target="_blank">
-    Repositório
-  </a>
+      <a [href]="project.repository_url" target="_blank" class="btn-action btn-secondary">
+        <span>Repositório GitHub</span>
+      </a>
+    </div>
+  </div>
 }

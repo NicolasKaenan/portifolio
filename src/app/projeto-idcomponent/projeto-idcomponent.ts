@@ -4,11 +4,12 @@ import { Subject, takeUntil } from 'rxjs';
 import { Project } from '../core/models/projects.model';
 import { ProjectsService } from '../core/services/projects.service';
 import { isPlatformBrowser } from '@angular/common';
+import { MarkdownModule } from 'ngx-markdown';
 
 @Component({
   selector: 'app-projeto-component',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, MarkdownModule],
   templateUrl: './projeto-idcomponent.html',
   styleUrls: ['./projeto-idcomponent.css']
 })
