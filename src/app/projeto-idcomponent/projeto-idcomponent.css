@@ -1,15 +1,13 @@
-/* Importação do base do GitHub para estrutura */
-@import 'github-markdown-css/github-markdown.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css';
 
 :root {
-  --bg-color: #ffffff;          /* Fundo Branco */
-  --card-bg: #ffffff;           /* Fundo do container */
-  --accent-green: #00a85d;      /* Verde para botões e títulos */
-  --text-main: #1f2328;         /* Cinza muito escuro (quase preto) para leitura */
-  --border-color: #d0d7de;      /* Borda clara */
+  --bg-color: #ffffff;         
+  --card-bg: #ffffff;           
+  --accent-green: #00a85d;      
+  --text-main: #1f2328;         
+  --border-color: #d0d7de;      
 }
 
-/* Layout Geral */
 .content {
   display: flex;
   flex-direction: column;
@@ -17,7 +15,6 @@
   padding: 40px 20px;
   background-color: var(--bg-color) !important;
   min-height: 100vh;
-  /* Forçamos a cor principal escura aqui */
   color: var(--text-main) !important; 
   font-family: 'Inter', -apple-system, sans-serif;
 }
@@ -31,9 +28,7 @@
   letter-spacing: -1px;
 }
 
-/* Container do Markdown */
 .markdown-body {
-  /* Forçar o modo claro no CSS do GitHub */
   color-scheme: light;
   --color-canvas-default: #ffffff;
   --color-fg-default: #1f2328;
@@ -44,7 +39,6 @@
   margin-bottom: 3rem;
   padding: 3.5rem !important;
   
-  /* Forçamos o fundo branco e a cor escura */
   background-color: #ffffff !important;
   color: #1f2328 !important; 
   
