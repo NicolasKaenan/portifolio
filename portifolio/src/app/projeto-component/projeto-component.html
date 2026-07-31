@@ -1,0 +1,52 @@
+<section class="projetos wrap">
+  <div class="section-head">
+    <div class="eyebrow">O que eu construí</div>
+    <h1>Projetos</h1>
+    <p>Ferramentas próprias, desafios técnicos e trabalhos em equipe.</p>
+  </div>
+
+  @if (loading) {
+    <div class="grid3">
+      @for (i of [1,2,3,4,5,6]; track i) {
+        <div class="pcard skeleton"></div>
+      }
+    </div>
+  }
+
+  @if (error) {
+    <div class="state-msg">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>Não consegui carregar os projetos agora. Tenta recarregar a página em instantes.</p>
+    </div>
+  }
+
+  @if (!loading && !error) {
+    @if (projects.length === 0) {
+      <div class="state-msg">
+        <ion-icon name="folder-open-outline"></ion-icon>
+        <p>Nenhum projeto publicado ainda.</p>
+      </div>
+    } @else {
+      <div class="grid3">
+        @for (project of projects; track project.id) {
+          <article class="pcard">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.shortened_description }}</p>
+
+            @if (project.postTags?.length) {
+              <div class="tags">
+                @for (tag of project.postTags; track tag.id) {
+                  <span class="chip">{{ tag.name }}</span>
+                }
+              </div>
+            }
+
+            <a class="link" [routerLink]="['/projeto', project.id]">
+              Ver projeto →
+            </a>
+          </article>
+        }
+      </div>
+    }
+  }
+</section>

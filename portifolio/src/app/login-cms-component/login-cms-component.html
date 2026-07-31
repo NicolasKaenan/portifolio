@@ -1,0 +1,39 @@
+<section class="login-wrap">
+  <form class="login-card" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="eyebrow">Área restrita</div>
+    <h1>Entrar no CMS</h1>
+    <p class="hint">kaenan@portfolio:~/control$</p>
+
+    <div class="field">
+      <label for="username">Usuário</label>
+      <input
+        id="username"
+        type="text"
+        name="username"
+        autocomplete="username"
+        [(ngModel)]="username"
+        required
+      />
+    </div>
+
+    <div class="field">
+      <label for="password">Senha</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        autocomplete="current-password"
+        [(ngModel)]="password"
+        required
+      />
+    </div>
+
+    @if (error()) {
+      <div class="error-msg">Usuário ou senha incorretos.</div>
+    }
+
+    <button type="submit" class="btn btn-primary" [disabled]="loading() || form.invalid">
+      {{ loading() ? 'Entrando...' : 'Entrar' }}
+    </button>
+  </form>
+</section>

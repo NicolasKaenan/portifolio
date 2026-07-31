@@ -1,0 +1,47 @@
+<section class="projeto-detail wrap">
+  <a routerLink="/projetos" class="back-link">
+    <ion-icon name="arrow-back-outline"></ion-icon> Voltar para projetos
+  </a>
+
+  @if (loading) {
+    <div class="state-msg">Carregando projeto...</div>
+  }
+
+  @if (error) {
+    <div class="state-msg error">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>Não consegui carregar esse projeto.</p>
+    </div>
+  }
+
+  @if (!loading && !error && project) {
+    <div class="content">
+      <h1 class="project-title">{{ project.title }}</h1>
+
+      @if (project.postTags?.length) {
+        <div class="tags">
+          @for (tag of project.postTags; track tag.id) {
+            <span class="chip">{{ tag.name }}</span>
+          }
+        </div>
+      }
+
+      <div class="markdown-body">
+        <markdown [data]="project.full_description"></markdown>
+      </div>
+
+      <div class="actions">
+        @if (project.project_url) {
+          <a [href]="project.project_url" target="_blank" rel="noopener" class="btn btn-primary">
+            <span>Abrir projeto</span>
+          </a>
+        }
+        @if (project.repository_url) {
+          <a [href]="project.repository_url" target="_blank" rel="noopener" class="btn btn-ghost">
+            <span>Repositório no GitHub</span>
+          </a>
+        }
+      </div>
+    </div>
+  }
+</section>

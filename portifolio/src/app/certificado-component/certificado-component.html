@@ -1,0 +1,48 @@
+<section class="certificados wrap">
+  <div class="section-head">
+    <div class="eyebrow">Credenciais</div>
+    <h1>Certificados</h1>
+    <p>Certificações validadas, direto do meu CMS.</p>
+  </div>
+
+  @if (loading) {
+    <div class="cert-grid">
+      @for (i of [1,2,3,4]; track i) {
+        <div class="cert skeleton"></div>
+      }
+    </div>
+  }
+
+  @if (error) {
+    <div class="state-msg">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>Não consegui carregar os certificados agora.</p>
+    </div>
+  }
+
+  @if (!loading && !error) {
+    @if (certificates.length === 0) {
+      <div class="state-msg">
+        <ion-icon name="ribbon-outline"></ion-icon>
+        <p>Nenhum certificado publicado ainda.</p>
+      </div>
+    } @else {
+      <div class="cert-grid">
+        @for (cert of certificates; track cert.id) {
+          <div class="cert">
+            <div class="cert-ic"><ion-icon name="ribbon-outline"></ion-icon></div>
+            <div class="cert-body">
+              <div class="cert-title">{{ cert.title }}</div>
+              <div class="cert-desc">{{ cert.shortened_description }}</div>
+              @if (cert.project_url) {
+                <a [href]="cert.project_url" target="_blank" rel="noopener" class="cert-link">
+                  Ver certificado →
+                </a>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    }
+  }
+</section>

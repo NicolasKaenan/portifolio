@@ -1,0 +1,54 @@
+<nav class="menu-portifolio-nav">
+  <a class="menu-logo" [routerLink]="'/home'" (click)="closeMenu()">
+    <img src="logo.png" alt="Logo Kaenan" />
+    <span id="typed" class="menu-typed"></span>
+  </a>
+
+  <ul class="menu-portifolio" [class.open]="menuOpen()">
+    <li>
+      <a
+        class="menu-item"
+        routerLink="/home"
+        routerLinkActive="nav-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="home-outline"></ion-icon>Home
+      </a>
+    </li>
+    <li>
+      <a
+        class="menu-item"
+        routerLink="/sobre"
+        routerLinkActive="nav-active"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="person-outline"></ion-icon>Sobre
+      </a>
+    </li>
+    <li>
+      <a
+        class="menu-item"
+        routerLink="/projetos"
+        routerLinkActive="nav-active"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="briefcase-outline"></ion-icon>Projetos
+      </a>
+    </li>
+    <li>
+      <a
+        class="menu-item"
+        routerLink="/certificados"
+        routerLinkActive="nav-active"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="document-text-outline"></ion-icon>Certificados
+      </a>
+    </li>
+  </ul>
+
+  <a class="menu-toggle" (click)="toggleMenu()">
+    <ion-icon [name]="menuOpen() ? 'close-outline' : 'menu-outline'"></ion-icon>
+  </a>
+</nav>
