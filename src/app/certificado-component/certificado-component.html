@@ -1,0 +1,48 @@
+<section class="certificados wrap">
+  <div class="section-head">
+    <div class="eyebrow">{{ 'certificados.eyebrow' | t }}</div>
+    <h1>{{ 'certificados.title' | t }}</h1>
+    <p>{{ 'certificados.subtitle' | t }}</p>
+  </div>
+
+  @if (loading()) {
+    <div class="cert-grid">
+      @for (i of [1,2,3,4]; track i) {
+        <div class="cert skeleton"></div>
+      }
+    </div>
+  }
+
+  @if (error()) {
+    <div class="state-msg">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>{{ 'certificados.error' | t }}</p>
+    </div>
+  }
+
+  @if (!loading() && !error()) {
+    @if (certificates().length === 0) {
+      <div class="state-msg">
+        <ion-icon name="ribbon-outline"></ion-icon>
+        <p>{{ 'certificados.empty' | t }}</p>
+      </div>
+    } @else {
+      <div class="cert-grid">
+        @for (cert of certificates(); track cert.id) {
+          <div class="cert">
+            <div class="cert-ic"><ion-icon name="ribbon-outline"></ion-icon></div>
+            <div class="cert-body">
+              <div class="cert-title">{{ text(cert.title) }}</div>
+              <div class="cert-desc">{{ text(cert.shortenedDescription) }}</div>
+              @if (cert.linkValidation) {
+                <a [href]="cert.linkValidation" target="_blank" rel="noopener" class="cert-link">
+                  {{ 'certificados.verCertificado' | t }}
+                </a>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    }
+  }
+</section>

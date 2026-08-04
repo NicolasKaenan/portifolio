@@ -1,0 +1,54 @@
+.projeto-detail {
+  padding: 48px 24px 90px;
+  max-width: 820px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-2);
+  margin-bottom: 28px;
+}
+
+.back-link:hover {
+  color: var(--amber-soft);
+}
+
+.state-msg {
+  color: var(--text-2);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.state-msg.error {
+  color: var(--coral);
+}
+
+.project-title {
+  font-size: clamp(24px, 3.4vw, 34px);
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.markdown-body {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}

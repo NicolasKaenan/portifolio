@@ -1,0 +1,183 @@
+.sobre {
+  padding: 64px 24px 80px;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+.sobre-photo {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 820px) {
+  .sobre-photo {
+    position: static;
+  }
+}
+
+.sobre-photo img {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
+}
+
+.sobre-social {
+  display: flex;
+  gap: 16px;
+}
+
+.sobre-social a {
+  color: var(--text-2);
+  font-size: 22px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.sobre-social a:hover {
+  color: var(--amber-soft);
+  transform: translateY(-2px);
+}
+
+.sobre-text h1 {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: 20px;
+}
+
+.sobre-text p {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-1);
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 640px;
+}
+
+.sobre-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+@media (max-width: 820px) {
+  .sobre-cta {
+    justify-content: center;
+  }
+}
+
+.sobre-cta .btn ion-icon {
+  font-size: 16px;
+}
+
+/* ===== Conquistas ===== */
+.conquistas {
+  padding: 0 24px 72px;
+  border-top: 1px solid var(--line);
+  padding-top: 64px;
+}
+
+.conquistas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .conquistas-grid { grid-template-columns: 1fr; }
+}
+
+.conquista {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+.conquista ion-icon {
+  font-size: 24px;
+  color: var(--amber-soft);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.conquista-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-0);
+  margin-bottom: 6px;
+}
+
+.conquista p {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+/* ===== Segurança ===== */
+.seguranca {
+  padding: 64px 24px 80px;
+  border-top: 1px solid var(--line);
+}
+
+.seguranca-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 900px) {
+  .seguranca-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .seguranca-grid { grid-template-columns: 1fr; }
+}
+
+.seg-item {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.seg-item ion-icon {
+  font-size: 24px;
+  color: var(--teal);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.seg-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-0);
+  margin-bottom: 8px;
+}
+
+.seg-item p {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.55;
+}

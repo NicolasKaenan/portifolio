@@ -1,0 +1,59 @@
+<nav class="menu-portifolio-nav">
+  <a class="menu-logo" [routerLink]="languageService.localize('/home')" (click)="closeMenu()">
+    <img src="logo.png" alt="Logo Kaenan" />
+    <span id="typed" class="menu-typed"></span>
+  </a>
+
+  <ul class="menu-portifolio" [class.open]="menuOpen()">
+    <li>
+      <a
+        class="menu-item"
+        [routerLink]="languageService.localize('/home')"
+        routerLinkActive="nav-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="home-outline"></ion-icon>{{ 'nav.home' | t }}
+      </a>
+    </li>
+    <li>
+      <a
+        class="menu-item"
+        [routerLink]="languageService.localize('/sobre')"
+        routerLinkActive="nav-active"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="person-outline"></ion-icon>{{ 'nav.sobre' | t }}
+      </a>
+    </li>
+    <li>
+      <a
+        class="menu-item"
+        [routerLink]="languageService.localize('/projetos')"
+        routerLinkActive="nav-active"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="briefcase-outline"></ion-icon>{{ 'nav.projetos' | t }}
+      </a>
+    </li>
+    <li>
+      <a
+        class="menu-item"
+        [routerLink]="languageService.localize('/certificados')"
+        routerLinkActive="nav-active"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="document-text-outline"></ion-icon>{{ 'nav.certificados' | t }}
+      </a>
+    </li>
+    <li>
+      <button class="lang-toggle" (click)="languageService.switchLang(); closeMenu()" [attr.aria-label]="'Toggle language'">
+        <ion-icon name="globe-outline"></ion-icon>{{ 'nav.langToggle' | t }}
+      </button>
+    </li>
+  </ul>
+
+  <a class="menu-toggle" (click)="toggleMenu()">
+    <ion-icon [name]="menuOpen() ? 'close-outline' : 'menu-outline'"></ion-icon>
+  </a>
+</nav>

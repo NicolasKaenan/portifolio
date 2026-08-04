@@ -1,0 +1,31 @@
+<div class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow">{{ 'hero.eyebrow' | t }}</div>
+    <h1>
+      {{ 'hero.title.pre' | t }}
+      <span class="hl">{{ 'hero.title.hl' | t }}</span>
+    </h1>
+    <p class="lead">{{ 'hero.lead' | t }}</p>
+
+    <div class="cta-row">
+      <a [routerLink]="languageService.localize('/projetos')" class="btn btn-primary">{{ 'hero.cta.projetos' | t }}</a>
+      <a [routerLink]="languageService.localize('/sobre')" class="btn btn-ghost">{{ 'hero.cta.contato' | t }}</a>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><b>15+</b><span>{{ 'hero.stat.machines' | t }}</span></div>
+      <div class="stat"><b>eJPT</b><span>{{ 'hero.stat.cert' | t }}</span></div>
+      <div class="stat"><b>100%</b><span>{{ 'hero.stat.privesc' | t }}</span></div>
+    </div>
+
+    <p class="hint">&rarr; {{ 'hero.hint' | t }}</p>
+  </div>
+
+  <div class="terminal">
+    <div class="term-bar">
+      <span></span><span></span><span></span>
+      <span class="t-label">kaenan&#64;portfolio:~</span>
+    </div>
+    <div class="term-body" #termBody></div>
+  </div>
+</div>

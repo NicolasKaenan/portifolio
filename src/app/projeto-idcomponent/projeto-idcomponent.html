@@ -1,0 +1,47 @@
+<section class="projeto-detail wrap">
+  <a [routerLink]="languageService.localize('/projetos')" class="back-link">
+    <ion-icon name="arrow-back-outline"></ion-icon> {{ 'projetoDetalhe.voltar' | t }}
+  </a>
+
+  @if (loading()) {
+    <div class="state-msg">{{ 'projetoDetalhe.carregando' | t }}</div>
+  }
+
+  @if (error()) {
+    <div class="state-msg error">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>{{ 'projetoDetalhe.erro' | t }}</p>
+    </div>
+  }
+
+  @if (!loading() && !error() && project(); as p) {
+    <div class="content">
+      <h1 class="project-title">{{ text(p.title) }}</h1>
+
+      @if (p.postTags?.length) {
+        <div class="tags">
+          @for (tag of p.postTags; track tag.id) {
+            <span class="chip">{{ tag.name }}</span>
+          }
+        </div>
+      }
+
+      <div class="markdown-body">
+        <markdown [data]="text(p.full_description)"></markdown>
+      </div>
+
+      <div class="actions">
+        @if (p.project_url) {
+          <a [href]="p.project_url" target="_blank" rel="noopener" class="btn btn-primary">
+            <span>{{ 'projetoDetalhe.abrirProjeto' | t }}</span>
+          </a>
+        }
+        @if (p.repository_url) {
+          <a [href]="p.repository_url" target="_blank" rel="noopener" class="btn btn-ghost">
+            <span>{{ 'projetoDetalhe.repositorio' | t }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  }
+</section>

@@ -1,0 +1,109 @@
+<section class="sobre wrap">
+  <div class="sobre-grid">
+    <div class="sobre-photo">
+      <img src="kaenan.png" alt="Nicolas Kaenan Silveira" />
+      <div class="sobre-social">
+        <a href="https://www.linkedin.com/in/nicolas-kaenan-silveira-68884b313/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="https://github.com/NicolasKaenan" target="_blank" rel="noopener" aria-label="GitHub">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://www.instagram.com/kaenansilv/" target="_blank" rel="noopener" aria-label="Instagram">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="sobre-text">
+      <div class="eyebrow">{{ 'sobre.eyebrow' | t }}</div>
+      <h1>{{ 'sobre.title' | t }}</h1>
+
+      <p>{{ 'sobre.p1' | t }}</p>
+      <p>{{ 'sobre.p2' | t }}</p>
+      <p>{{ 'sobre.p3' | t }}</p>
+      <p>{{ 'sobre.p4' | t }}</p>
+
+      <div class="sobre-cta">
+        <a [routerLink]="languageService.localize('/projetos')" class="btn btn-primary">{{ 'sobre.cta.projetos' | t }}</a>
+        <a href="mailto:kaenansilveira@outlook.com" class="btn btn-ghost">{{ 'sobre.cta.contato' | t }}</a>
+        <a href="Curriculo_Nicolas_Kaenan_Silveira.pdf" download class="btn btn-ghost">
+          <ion-icon name="download-outline"></ion-icon>{{ 'sobre.cta.curriculo' | t }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="conquistas wrap">
+  <div class="section-head">
+    <div class="eyebrow">{{ 'conquistas.eyebrow' | t }}</div>
+    <h2>{{ 'conquistas.title' | t }}</h2>
+  </div>
+  <div class="conquistas-grid">
+    <div class="conquista">
+      <ion-icon name="trophy-outline"></ion-icon>
+      <div>
+        <div class="conquista-title">{{ 'conquistas.item1.title' | t }}</div>
+        <p>{{ 'conquistas.item1.desc' | t }}</p>
+      </div>
+    </div>
+    <div class="conquista">
+      <ion-icon name="trophy-outline"></ion-icon>
+      <div>
+        <div class="conquista-title">{{ 'conquistas.item2.title' | t }}</div>
+        <p>{{ 'conquistas.item2.desc' | t }}</p>
+      </div>
+    </div>
+    <div class="conquista">
+      <ion-icon name="terminal-outline"></ion-icon>
+      <div>
+        <div class="conquista-title">{{ 'conquistas.item3.title' | t }}</div>
+        <p>{{ 'conquistas.item3.desc' | t }}</p>
+      </div>
+    </div>
+    <div class="conquista">
+      <ion-icon name="key-outline"></ion-icon>
+      <div>
+        <div class="conquista-title">{{ 'conquistas.item4.title' | t }}</div>
+        <p>{{ 'conquistas.item4.desc' | t }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seguranca wrap">
+  <div class="section-head">
+    <div class="eyebrow">{{ 'seguranca.eyebrow' | t }}</div>
+    <h2>{{ 'seguranca.title' | t }}</h2>
+    <p>{{ 'seguranca.subtitle' | t }}</p>
+  </div>
+  <div class="seguranca-grid">
+    <div class="seg-item">
+      <ion-icon name="shield-checkmark-outline"></ion-icon>
+      <div class="seg-title">{{ 'seguranca.item1.title' | t }}</div>
+      <p>{{ 'seguranca.item1.desc' | t }}</p>
+    </div>
+    <div class="seg-item">
+      <ion-icon name="list-outline"></ion-icon>
+      <div class="seg-title">{{ 'seguranca.item2.title' | t }}</div>
+      <p>{{ 'seguranca.item2.desc' | t }}</p>
+    </div>
+    <div class="seg-item">
+      <ion-icon name="locate-outline"></ion-icon>
+      <div class="seg-title">{{ 'seguranca.item3.title' | t }}</div>
+      <p>{{ 'seguranca.item3.desc' | t }}</p>
+    </div>
+    <div class="seg-item">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <div class="seg-title">{{ 'seguranca.item4.title' | t }}</div>
+      <p>{{ 'seguranca.item4.desc' | t }}</p>
+    </div>
+    <div class="seg-item">
+      <ion-icon name="layers-outline"></ion-icon>
+      <div class="seg-title">{{ 'seguranca.item5.title' | t }}</div>
+      <p>{{ 'seguranca.item5.desc' | t }}</p>
+    </div>
+  </div>
+  <a [routerLink]="languageService.localize('/certificados')" class="btn btn-ghost">{{ 'seguranca.cta' | t }}</a>
+</section>

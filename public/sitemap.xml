@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://kaenan.dev/home</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://kaenan.dev/home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaenan.dev/en/home"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kaenan.dev/home"/>
+  </url>
+  <url>
+    <loc>https://kaenan.dev/en/home</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://kaenan.dev/home"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaenan.dev/en/home"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kaenan.dev/home"/>
+  </url>
+
+  <url>
+    <loc>https://kaenan.dev/sobre</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://kaenan.dev/sobre"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaenan.dev/en/sobre"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kaenan.dev/sobre"/>
+  </url>
+  <url>
+    <loc>https://kaenan.dev/en/sobre</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://kaenan.dev/sobre"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaenan.dev/en/sobre"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kaenan.dev/sobre"/>
+  </url>
+
+  <url>
+    <loc>https://kaenan.dev/projetos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://kaenan.dev/projetos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaenan.dev/en/projetos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kaenan.dev/projetos"/>
+  </url>
+  <url>
+    <loc>https://kaenan.dev/en/projetos</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://kaenan.dev/projetos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaenan.dev/en/projetos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kaenan.dev/projetos"/>
+  </url>
+
+  <url>
+    <loc>https://kaenan.dev/certificados</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://kaenan.dev/certificados"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaenan.dev/en/certificados"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kaenan.dev/certificados"/>
+  </url>
+  <url>
+    <loc>https://kaenan.dev/en/certificados</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://kaenan.dev/certificados"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaenan.dev/en/certificados"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kaenan.dev/certificados"/>
+  </url>
+
+</urlset>

@@ -1,0 +1,28 @@
+<div class="term-tab" (click)="toggle()" title="Abrir terminal">
+  <span class="led"></span>
+  <span class="glyph">&gt;_</span>
+  <span class="vtext">TERMINAL</span>
+</div>
+
+<div class="term-overlay" [class.open]="open()" (click)="close()"></div>
+
+<div class="term-drawer" [class.open]="open()">
+  <div class="tbar">
+    <span class="dotc"></span><span class="dotc"></span><span class="dotc"></span>
+    <span class="lbl">kaenan&#64;portfolio: {{ promptPath() }}</span>
+    <span class="closebtn" (click)="close()">fechar ✕</span>
+  </div>
+
+  <div class="term-screen" #termScreen></div>
+
+  <div class="term-inputline">
+    <span class="prompt">kaenan&#64;portfolio:{{ promptPath() }}$</span>
+    <input
+      #termInput
+      type="text"
+      autocomplete="off"
+      spellcheck="false"
+      (keydown)="onKeydown($event)"
+    />
+  </div>
+</div>

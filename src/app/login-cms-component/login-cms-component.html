@@ -1,0 +1,39 @@
+<section class="login-wrap">
+  <form class="login-card" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="eyebrow">{{ 'login.eyebrow' | t }}</div>
+    <h1>{{ 'login.title' | t }}</h1>
+    <p class="hint">kaenan&#64;portfolio:~/control$</p>
+
+    <div class="field">
+      <label for="username">{{ 'login.usuario' | t }}</label>
+      <input
+        id="username"
+        type="text"
+        name="username"
+        autocomplete="username"
+        [(ngModel)]="username"
+        required
+      />
+    </div>
+
+    <div class="field">
+      <label for="password">{{ 'login.senha' | t }}</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        autocomplete="current-password"
+        [(ngModel)]="password"
+        required
+      />
+    </div>
+
+    @if (error()) {
+      <div class="error-msg">{{ 'login.erro' | t }}</div>
+    }
+
+    <button type="submit" class="btn btn-primary" [disabled]="loading() || form.invalid">
+      {{ loading() ? ('login.entrando' | t) : ('login.entrar' | t) }}
+    </button>
+  </form>
+</section>

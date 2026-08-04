@@ -1,0 +1,94 @@
+.projetos {
+  padding: 64px 24px 80px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .grid3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 620px) {
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pcard {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.pcard:hover {
+  border-color: var(--teal);
+  transform: translateY(-3px);
+}
+
+.pcard h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.pcard p {
+  font-family: var(--font-sans);
+  font-size: 13.3px;
+  color: var(--text-1);
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.pcard .link {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--amber-soft);
+}
+
+.pcard .link:hover {
+  color: var(--text-0);
+}
+
+.skeleton {
+  min-height: 150px;
+  background: linear-gradient(100deg, var(--bg-1) 30%, var(--bg-2) 50%, var(--bg-1) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.state-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 60px 20px;
+  color: var(--text-2);
+  text-align: center;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+
+.state-msg ion-icon {
+  font-size: 30px;
+  color: var(--text-2);
+}

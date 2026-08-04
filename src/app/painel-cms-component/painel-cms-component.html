@@ -1,0 +1,222 @@
+<section class="painel wrap">
+  <div class="painel-head">
+    <div>
+      <div class="eyebrow">Painel administrativo</div>
+      <h1>CMS</h1>
+    </div>
+    <button class="btn btn-ghost" (click)="logout()">Sair</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn" [class.active]="tab() === 'projetos'" (click)="setTab('projetos')">
+      Projetos ({{ projects().length }})
+    </button>
+    <button class="tab-btn" [class.active]="tab() === 'certificados'" (click)="setTab('certificados')">
+      Certificados ({{ certificates().length }})
+    </button>
+  </div>
+
+  @if (formError()) {
+    <div class="form-error">{{ formError() }}</div>
+  }
+
+  <!-- ============== PROJETOS ============== -->
+  @if (tab() === 'projetos') {
+    <div class="panel-grid">
+      <form class="form-card" (ngSubmit)="saveProject()" #pf="ngForm">
+        <h2>{{ editingProjectId() ? 'Editar projeto' : 'Novo projeto' }}</h2>
+
+        <div class="lang-pair">
+          <div class="field">
+            <label>Título (PT)</label>
+            <input type="text" name="title_pt" [(ngModel)]="projectForm.title_pt" required />
+          </div>
+          <div class="field">
+            <label>Título (EN)</label>
+            <input type="text" name="title_en" [(ngModel)]="projectForm.title_en" />
+          </div>
+        </div>
+
+        <div class="lang-pair">
+          <div class="field">
+            <label>Descrição curta (PT)</label>
+            <input type="text" name="shortened_pt" [(ngModel)]="projectForm.shortened_pt" required />
+          </div>
+          <div class="field">
+            <label>Descrição curta (EN)</label>
+            <input type="text" name="shortened_en" [(ngModel)]="projectForm.shortened_en" />
+          </div>
+        </div>
+
+        <div class="lang-pair">
+          <div class="field">
+            <label>Descrição completa — markdown (PT)</label>
+            <textarea name="full_pt" rows="6" [(ngModel)]="projectForm.full_pt" required></textarea>
+          </div>
+          <div class="field">
+            <label>Descrição completa — markdown (EN)</label>
+            <textarea name="full_en" rows="6" [(ngModel)]="projectForm.full_en"></textarea>
+          </div>
+        </div>
+
+        <p class="lang-note">Deixe os campos EN em branco se ainda não tiver a tradução — o site usa o PT como fallback.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label>URL do projeto</label>
+            <input type="text" name="project_url" [(ngModel)]="projectForm.project_url" required />
+          </div>
+          <div class="field">
+            <label>URL do repositório</label>
+            <input type="text" name="repository_url" [(ngModel)]="projectForm.repository_url" required />
+          </div>
+        </div>
+        <div class="field">
+          <label>Data de publicação</label>
+          <input type="date" name="posting_date" [(ngModel)]="projectForm.posting_date" required />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" [disabled]="saving() || pf.invalid">
+            {{ saving() ? 'Salvando...' : (editingProjectId() ? 'Salvar alterações' : 'Criar projeto') }}
+          </button>
+          @if (editingProjectId()) {
+            <button type="button" class="btn btn-ghost" (click)="startNewProject()">Cancelar edição</button>
+          }
+        </div>
+      </form>
+
+      <div class="list-card">
+        @if (loading()) {
+          <p class="muted">Carregando...</p>
+        } @else if (projects().length === 0) {
+          <p class="muted">Nenhum projeto ainda.</p>
+        } @else {
+          @for (p of projects(); track p.id) {
+            <div class="item">
+              <div class="item-head">
+                <strong>{{ preview(p.title) }}</strong>
+                <div class="item-actions">
+                  <button class="link-btn" (click)="startEditProject(p)">editar</button>
+                  <button class="link-btn danger" (click)="deleteProject(p)">excluir</button>
+                </div>
+              </div>
+              <p class="muted small">{{ preview(p.shortened_description) }}</p>
+
+              <div class="tag-editor">
+                @for (t of p.postTags; track t.id) {
+                  <span class="chip removable">
+                    {{ t.name }}
+                    <button (click)="removeTag(t.id)" aria-label="remover tag">×</button>
+                  </span>
+                }
+                <input
+                  class="tag-input"
+                  type="text"
+                  placeholder="+ tag"
+                  [(ngModel)]="newTagValue[p.id]"
+                  [ngModelOptions]="{ standalone: true }"
+                  (keydown.enter)="addTag(p)"
+                />
+              </div>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  }
+
+  <!-- ============== CERTIFICADOS ============== -->
+  @if (tab() === 'certificados') {
+    <div class="panel-grid">
+      <form class="form-card" (ngSubmit)="saveCertificate()" #cf="ngForm">
+        <h2>{{ editingCertificateId() ? 'Editar certificado' : 'Novo certificado' }}</h2>
+
+        <div class="lang-pair">
+          <div class="field">
+            <label>Título (PT)</label>
+            <input type="text" name="title_pt" [(ngModel)]="certificateForm.title_pt" required />
+          </div>
+          <div class="field">
+            <label>Título (EN)</label>
+            <input type="text" name="title_en" [(ngModel)]="certificateForm.title_en" />
+          </div>
+        </div>
+
+        <div class="lang-pair">
+          <div class="field">
+            <label>Instituição (PT)</label>
+            <input type="text" name="institution_pt" [(ngModel)]="certificateForm.institution_pt" required />
+          </div>
+          <div class="field">
+            <label>Instituição (EN)</label>
+            <input type="text" name="institution_en" [(ngModel)]="certificateForm.institution_en" />
+          </div>
+        </div>
+
+        <div class="lang-pair">
+          <div class="field">
+            <label>Descrição curta (PT)</label>
+            <input type="text" name="shortened_pt" [(ngModel)]="certificateForm.shortened_pt" required />
+          </div>
+          <div class="field">
+            <label>Descrição curta (EN)</label>
+            <input type="text" name="shortened_en" [(ngModel)]="certificateForm.shortened_en" />
+          </div>
+        </div>
+
+        <div class="lang-pair">
+          <div class="field">
+            <label>Descrição completa (PT)</label>
+            <textarea name="full_pt" rows="5" [(ngModel)]="certificateForm.full_pt" required></textarea>
+          </div>
+          <div class="field">
+            <label>Descrição completa (EN)</label>
+            <textarea name="full_en" rows="5" [(ngModel)]="certificateForm.full_en"></textarea>
+          </div>
+        </div>
+
+        <p class="lang-note">Deixe os campos EN em branco se ainda não tiver a tradução — o site usa o PT como fallback.</p>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Data de conclusão</label>
+            <input type="date" name="completionDate" [(ngModel)]="certificateForm.completionDate" required />
+          </div>
+          <div class="field">
+            <label>Link de validação</label>
+            <input type="text" name="linkValidation" [(ngModel)]="certificateForm.linkValidation" required />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" [disabled]="saving() || cf.invalid">
+            {{ saving() ? 'Salvando...' : (editingCertificateId() ? 'Salvar alterações' : 'Criar certificado') }}
+          </button>
+          @if (editingCertificateId()) {
+            <button type="button" class="btn btn-ghost" (click)="startNewCertificate()">Cancelar edição</button>
+          }
+        </div>
+      </form>
+
+      <div class="list-card">
+        @if (certificates().length === 0) {
+          <p class="muted">Nenhum certificado ainda.</p>
+        } @else {
+          @for (c of certificates(); track c.id) {
+            <div class="item">
+              <div class="item-head">
+                <strong>{{ preview(c.title) }}</strong>
+                <div class="item-actions">
+                  <button class="link-btn" (click)="startEditCertificate(c)">editar</button>
+                  <button class="link-btn danger" (click)="deleteCertificate(c)">excluir</button>
+                </div>
+              </div>
+              <p class="muted small">{{ preview(c.institution) }} — {{ preview(c.shortenedDescription) }}</p>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  }
+</section>

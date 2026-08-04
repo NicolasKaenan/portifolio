@@ -1,0 +1,47 @@
+<section class="github-showcase wrap">
+  <div class="section-head">
+    <div class="eyebrow">{{ 'github.eyebrow' | t }}</div>
+    <h2>{{ 'github.title' | t }}</h2>
+    <p>{{ 'github.subtitle' | t }}</p>
+  </div>
+
+  @if (loading()) {
+    <div class="repo-grid">
+      @for (i of [1,2,3,4,5,6]; track i) {
+        <div class="repo-card skeleton"></div>
+      }
+    </div>
+  }
+
+  @if (error()) {
+    <p class="muted">{{ 'github.error' | t }}</p>
+  }
+
+  @if (!loading() && !error()) {
+    <div class="repo-grid">
+      @for (repo of repos(); track repo.name) {
+        <a class="repo-card" [href]="repo.html_url" target="_blank" rel="noopener">
+          <div class="repo-name">
+            <ion-icon name="logo-github"></ion-icon>
+            <span>{{ repo.name }}</span>
+          </div>
+          @if (repo.description) {
+            <p class="repo-desc">{{ repo.description }}</p>
+          }
+          <div class="repo-meta">
+            @if (repo.language) {
+              <span class="repo-lang"><span class="dot"></span>{{ repo.language }}</span>
+            }
+            @if (repo.stargazers_count > 0) {
+              <span class="repo-stars"><ion-icon name="star-outline"></ion-icon>{{ repo.stargazers_count }}</span>
+            }
+          </div>
+        </a>
+      }
+    </div>
+  }
+
+  <a href="https://github.com/NicolasKaenan" target="_blank" rel="noopener" class="btn btn-ghost github-cta">
+    {{ 'github.viewProfile' | t }}
+  </a>
+</section>

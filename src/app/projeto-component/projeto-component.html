@@ -1,0 +1,52 @@
+<section class="projetos wrap">
+  <div class="section-head">
+    <div class="eyebrow">{{ 'projetos.eyebrow' | t }}</div>
+    <h1>{{ 'projetos.title' | t }}</h1>
+    <p>{{ 'projetos.subtitle' | t }}</p>
+  </div>
+
+  @if (loading()) {
+    <div class="grid3">
+      @for (i of [1,2,3,4,5,6]; track i) {
+        <div class="pcard skeleton"></div>
+      }
+    </div>
+  }
+
+  @if (error()) {
+    <div class="state-msg">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>{{ 'projetos.error' | t }}</p>
+    </div>
+  }
+
+  @if (!loading() && !error()) {
+    @if (projects().length === 0) {
+      <div class="state-msg">
+        <ion-icon name="folder-open-outline"></ion-icon>
+        <p>{{ 'projetos.empty' | t }}</p>
+      </div>
+    } @else {
+      <div class="grid3">
+        @for (project of projects(); track project.id) {
+          <article class="pcard">
+            <h3>{{ text(project.title) }}</h3>
+            <p>{{ text(project.shortened_description) }}</p>
+
+            @if (project.postTags?.length) {
+              <div class="tags">
+                @for (tag of project.postTags; track tag.id) {
+                  <span class="chip">{{ tag.name }}</span>
+                }
+              </div>
+            }
+
+            <a class="link" [routerLink]="languageService.localize('/projeto/' + project.id)">
+              {{ 'projetos.verProjeto' | t }}
+            </a>
+          </article>
+        }
+      </div>
+    }
+  }
+</section>

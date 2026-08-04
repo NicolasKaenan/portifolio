@@ -1,0 +1,134 @@
+.hero {
+  padding: 76px 24px 64px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 44px 20px 36px;
+  }
+}
+
+h1 {
+  font-size: clamp(28px, 4.2vw, 46px);
+  line-height: 1.15;
+  margin-bottom: 18px;
+  max-width: 640px;
+}
+
+h1 .hl {
+  color: var(--amber-soft);
+}
+
+.lead {
+  font-size: 16.5px;
+  color: var(--text-1);
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.stat-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  font-family: var(--font-mono);
+}
+
+.stat b {
+  display: block;
+  font-size: 21px;
+  color: var(--text-0);
+}
+
+.stat span {
+  font-size: 11.5px;
+  color: var(--text-2);
+}
+
+.hint {
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.terminal {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.term-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 14px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.term-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3a4451;
+}
+
+.t-label {
+  margin-left: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.term-body {
+  padding: 20px 22px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #c7d0da;
+  min-height: 230px;
+}
+
+.term-body ::ng-deep .prompt {
+  color: var(--teal);
+}
+.term-body ::ng-deep .path {
+  color: var(--amber-soft);
+}
+.term-body ::ng-deep .ok {
+  color: var(--green);
+}
+.term-body ::ng-deep .crit {
+  color: var(--coral);
+}
+
+.term-body ::ng-deep .cursor {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: var(--amber-soft);
+  animation: blink 1s steps(1) infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
